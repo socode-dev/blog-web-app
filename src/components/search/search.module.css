@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
+
+.form {
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex: 1;
+  margin-inline: 20px;
+}
+.label {
+  display: none;
+}
+.input {
+  padding: 10px 5px;
+  flex: 1;
+  border-radius: 5px;
+  font-family: "Merriweather", serif;
+  font-size: 0.8em;
+  border: none;
+  box-shadow: 0px 0px 3px hsl(0, 0%, 80%);
+  outline-color: hsl(180, 100%, 30%);
+}
+.searchIcon {
+  position: absolute;
+  pointer-events: none;
+  right: 10px;
+  opacity: 0.6;
+}

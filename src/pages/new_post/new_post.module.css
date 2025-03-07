@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
+
+.form * {
+  font-family: "Merriweather", serif;
+  color: hsl(0, 0, 10%);
+}
+.form {
+  max-width: 800px;
+  width: 100%;
+  height: auto;
+  padding: 80px 20px;
+}
+.formHeading {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+.titleCon,
+.hashtagCon,
+.postCon {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+label {
+  font-size: 0.9em;
+  font-weight: bold;
+}
+input[type="text"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid hsl(0, 2%, 24%);
+  box-shadow: 0 0 5px hsl(0, 0, 100%);
+  outline-color: hsl(180, 100%, 30%);
+}
+.postCon textarea {
+  padding: 10px;
+  resize: none;
+  border: 2px solid hsl(0, 2%, 24%);
+  border-radius: 5px;
+  outline-color: hsl(180, 100%, 30%);
+}
+.postButton {
+  all: unset;
+  width: 100%;
+  padding: 10px 0;
+  background-color: hsl(180, 100%, 30%);
+  border-radius: 5px;
+  box-shadow: 0 0 2px hsl(180, 100%, 30%);
+  font-size: 1em;
+  font-weight: bold;
+  color: hsl(0, 0%, 90%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s ease-out;
+}
+.postButton:hover {
+  background-color: hsl(180, 100%, 20%);
+}

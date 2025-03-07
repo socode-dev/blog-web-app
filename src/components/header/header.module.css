@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
+
+.header {
+  background-color: hsl(0, 0%, 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 2px 1px hsl(0, 0%, 100%);
+  z-index: 1000;
+}
+.title {
+  font-size: 1.5em;
+  font-family: "Playfair Display", serif;
+  cursor: pointer;
+}
+.titleLink {
+  text-decoration: none;
+  color: hsl(0, 0%, 10%);
+}
+.searchContainer {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.menuIcon,
+.search {
+  display: none !important;
+  color: hsl(0, 0%, 10%);
+  cursor: pointer;
+  transition: color 0.3s ease-out;
+}
+.menuIcon:hover,
+.search:hover {
+  color: hsl(0, 0%, 30%);
+}
+
+@media (max-width: 768px) {
+  .searchContainer {
+    display: none;
+  }
+  .navLinks {
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: hsl(0, 0%, 100%);
+    width: 100%;
+    padding: 20px 10px;
+    z-index: 1000;
+
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out,
+      visibilty 0.4s ease-in-out;
+  }
+  .menuIcon,
+  .search {
+    display: block !important;
+  }
+  .showMenu {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  .mobileSearchContainer {
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    left: 0;
+    background-color: hsl(0, 0%, 90%);
+    padding: 10px;
+    box-shadow: 0 2px 5px hsl(0, 0%, 80%);
+    z-index: 999;
+    display: grid;
+    place-items: center;
+  }
+}

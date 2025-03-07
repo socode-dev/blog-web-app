@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+.footer {
+  background-color: hsl(0, 0%, 100%);
+  border: 1px solid hsl(0, 0%, 80%);
+  padding: 20px;
+  text-align: center;
+}
+.footer p {
+  font-family: "Playfair Display", serif;
+  font-size: 0.8em;
+  color: hsl(0, 0%, 60%);
+  text-wrap: wrap;
+}
+.footerLink {
+  text-decoration: none;
+  color: hsl(180, 100%, 30%);
+  cursor: pointer;
+  transition: 0.2s;
+}
+.footerLink:hover {
+  text-decoration: dotted;
+  color: hsl(180, 100%, 20%);
+}

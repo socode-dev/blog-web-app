@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
+
+.login,
+.signUp {
+  all: unset;
+  color: hsl(0, 0%, 90%);
+  border-radius: 5px;
+  height: fit-content;
+  width: 50px;
+  width: 50%;
+  text-align: center;
+  padding: 5px 15px;
+  font-family: "Merriweather", serif;
+  font-size: 0.8em;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.login {
+  border: 2px solid hsl(0, 0%, 10%);
+  color: hsl(0, 0%, 10%);
+}
+.login:hover {
+  background-color: hsl(0, 0%, 10%);
+  color: hsl(0, 0%, 90%);
+}
+
+.signUp {
+  border: 2px solid hsl(180, 100%, 30%);
+  background-color: hsl(180, 100%, 30%);
+  border-radius: 5px;
+  min-width: fit-content;
+}
+.signUp:hover {
+  border-color: hsl(180, 100%, 40%);
+  background-color: hsl(180, 100%, 40%);
+}
