@@ -1,8 +1,7 @@
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Style from "./nav.module.css";
 
 const Nav = ({ menuToggle, setMenuToggle }) => {
-  const { postId } = useParams();
   const hideMenu = () => {
     setMenuToggle(!menuToggle);
   };

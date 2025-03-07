@@ -1,0 +1,275 @@
+[
+  {
+    "id": 1,
+    "title": "Mastering JavaScript: A Deep Dive into ESNext Features",
+    "content": "JavaScript is constantly evolving, and with each ECMAScript (ES) update, developers gain powerful new features that simplify coding and improve performance. ESNext introduces features such as optional chaining, nullish coalescing, and top-level await, which can significantly enhance the way you write JavaScript.\n\n### Optional Chaining (`?.`)\nOptional chaining prevents errors when accessing deeply nested object properties. Instead of manually checking each level, you can use `?.` to safely access values.\n\n```js\nconst user = { profile: { name: 'Alice' } };\nconsole.log(user.profile?.name); // 'Alice'\nconsole.log(user.profile?.age); // undefined (instead of error)\n```\n\n### Nullish Coalescing (`??`)\nThe nullish coalescing operator (`??`) provides a better way to set default values when handling `null` or `undefined`.\n\n```js\nconst userInput = null;\nconst username = userInput ?? 'Guest';\nconsole.log(username); // 'Guest'\n```\n\n### Top-Level Await\nWith ESNext, `await` can be used outside an `async` function in ES modules, making asynchronous programming more straightforward.\n\n```js\nconst response = await fetch('https://api.example.com/data');\nconst data = await response.json();\nconsole.log(data);\n```\n\n### Conclusion\nESNext features continue to make JavaScript more robust and user-friendly. By adopting these new capabilities, developers can write cleaner, safer, and more efficient code.",
+    "dateTime": "February 1, 2025 09:15 AM",
+    "author": "Charlotte White",
+    "avatar": "https://i.pravatar.cc/150?img=1",
+    "hashtags": [
+      "#JavaScript",
+      "#ESNext",
+      "#WebDevelopment",
+      "#Programming",
+      "#Frontend"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Understanding React Fiber: How React Optimized Rendering",
+    "content": "React Fiber, introduced in React 16, is a powerful rendering engine that improves UI updates, enabling features like concurrent mode, time slicing, and suspense. It provides smoother rendering and prioritizes important UI updates.\n\n### How React Fiber Works\nUnlike the old reconciliation algorithm, Fiber breaks rendering into smaller tasks, allowing React to pause and resume rendering as needed.\n\n### Key Features of React Fiber\n1. **Incremental Rendering** - React processes UI updates in chunks instead of all at once.\n2. **Prioritized Updates** - User interactions are handled before background updates.\n3. **Concurrent Mode** - React works on multiple UI updates simultaneously.\n\n### Example of Suspense\nSuspense helps manage asynchronous components efficiently:\n\n```jsx\nimport { Suspense } from 'react';\nconst LazyComponent = React.lazy(() => import('./LazyComponent'));\n\nfunction App() {\n  return (\n    <Suspense fallback={<div>Loading...</div>}>\n      <LazyComponent />\n    </Suspense>\n  );\n}\n```\n\n### Conclusion\nReact Fiber enhances performance and responsiveness, making it an essential feature for building modern React applications.",
+    "dateTime": "February 3, 2025 02:45 PM",
+    "author": "James Anderson",
+    "avatar": "https://i.pravatar.cc/150?img=2",
+    "hashtags": ["#React", "#ReactFiber", "#WebPerformance", "#Frontend", "#UI"]
+  },
+  {
+    "id": 3,
+    "title": "Why TypeScript is Essential for Scalable JavaScript Applications",
+    "content": "TypeScript extends JavaScript by adding static typing, improving code quality, and enhancing developer productivity. It has become a preferred language for large-scale applications due to its error prevention capabilities.\n\n### Benefits of TypeScript\n1. **Static Typing** - TypeScript checks for type-related errors at compile time.\n2. **Improved Code Readability** - Interfaces and type definitions make code more structured.\n3. *Better Developer Experience** - IDEs provide better autocomplete and refactoring support.\n\n### Example of Static Typing\n```ts\nfunction add(a: number, b: number): number {\n  return a + b;\n}\nconsole.log(add(5, '10')); // ❌ Type error\n```\n\n### Conclusion\nTypeScript helps create maintainable and scalable JavaScript applications. With its increasing adoption, learning TypeScript is a valuable skill for developers.",
+    "dateTime": "February 5, 2025 11:30 AM",
+    "author": "Noah Johnson",
+    "avatar": "https://i.pravatar.cc/150?img=3",
+    "hashtags": [
+      "#TypeScript",
+      "#JavaScript",
+      "#Scalability",
+      "#WebDevelopment",
+      "#Coding"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Understanding Node.js Streams for Efficient Data Processing",
+    "content": "Node.js streams provide an efficient way to process large amounts of data in chunks rather than loading everything into memory at once. This is useful for handling large files and real-time data processing.\n\n### Types of Streams\n1. **Readable Streams** - Used for reading data (e.g., file reading, HTTP requests).\n2. **Writable Streams** - Used for writing data (e.g., file writing, HTTP responses).\n3. **Duplex Streams** - Can both read and write data (e.g., network sockets).\n4. **Transform Streams** - Modify data as it passes through (e.g., compression, encryption).\n\n### Example: Reading a File with Streams\n```js\nconst fs = require('fs');\nconst readStream = fs.createReadStream('largefile.txt', 'utf8');\nreadStream.on('data', chunk => {\n  console.log(chunk); // Processes file in chunks\n});\n```\n\n### Conclusion\nStreams improve performance by allowing efficient data handling, making them essential for real-time applications and big data processing.",
+    "dateTime": "February 7, 2025 05:10 PM",
+    "author": "Ava Moore",
+    "avatar": "https://i.pravatar.cc/150?img=4",
+    "hashtags": [
+      "#NodeJS",
+      "#Streams",
+      "#Backend",
+      "#DataProcessing",
+      "#Coding"
+    ]
+  },
+
+  {
+    "id": 5,
+
+    "title": "The Power of Functional Programming in JavaScript",
+
+    "content": "Functional programming (FP) is a paradigm that emphasizes immutability and pure functions to create cleaner and more predictable code. Unlike object-oriented programming (OOP), which relies on state and objects, FP treats functions as first-class citizens.\n\n### Key Principles of Functional Programming\n#### 1. Pure Functions\nA pure function always returns the same output for a given input and has no side effects.\n\n```js\n// Pure function example\nfunction add(a, b) {\n  return a + b;\n}\nconsole.log(add(2, 3)); // 5\n```\n\n#### 2. Immutability\nInstead of modifying existing data, FP encourages creating new data structures.\n\n```js\nconst numbers = [1, 2, 3];\nconst newNumbers = [...numbers, 4];\nconsole.log(newNumbers); // [1, 2, 3, 4]\n```\n\n#### 3. Higher-Order Functions\nA higher-order function is a function that takes another function as an argument or returns a function.\n\n```js\nconst numbers = [1, 2, 3, 4, 5];\nconst doubled = numbers.map(num => num * 2);\nconsole.log(doubled); // [2, 4, 6, 8, 10]\n```\n\n### Conclusion\nBy understanding functional programming, JavaScript developers can write cleaner and more maintainable code, reducing bugs and improving efficiency.",
+    "dateTime": "February 9, 2025 01:10 PM",
+    "author": "William Taylor",
+    "avatar": "https://i.pravatar.cc/150?img=5",
+    "hashtags": [
+      "#JavaScript",
+      "#FunctionalProgramming",
+      "#WebDevelopment",
+      "#Coding",
+      "#FP"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Mastering Asynchronous JavaScript: Callbacks, Promises, and Async/Await",
+    "content": "Asynchronous programming allows JavaScript to handle time-consuming operations without blocking execution. JavaScript achieves this with **callbacks, promises, and async/await**.\n\n### Callbacks\nA callback is a function passed as an argument to another function and executed later.\n\n```js\nfunction fetchData(callback) {\n  setTimeout(() => {\n    callback('Data loaded');\n  }, 2000);\n}\n\nfetchData((message) => console.log(message));\n```\n\n### Promises\nA promise represents a future value and eliminates callback hell by providing `.then()` and `.catch()` methods.\n\n```js\nconst fetchData = new Promise((resolve) => {\n  setTimeout(() => {\n    resolve('Data loaded');\n  }, 2000);\n});\nfetchData.then(console.log);\n```\n\n### Async/Await\nThe async/await syntax simplifies promises by making asynchronous code look synchronous.\n\n```js\nasync function loadData() {\n  const data = await fetchData;\n  console.log(data);\n}\nloadData();\n```\n\n### Conclusion\nUnderstanding asynchronous programming is crucial for writing efficient JavaScript applications, particularly when dealing with APIs and user interactions.",
+    "dateTime": "February 12, 2025 10:30 AM",
+    "author": "Liam Thompson",
+    "avatar": "https://i.pravatar.cc/150?img=6",
+    "hashtags": [
+      "#JavaScript",
+      "#AsyncAwait",
+      "#WebDevelopment",
+      "#Promises",
+      "#Coding"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "How to Build a REST API with Node.js and Express",
+    "content": "Node.js, combined with Express, makes it easy to build REST APIs for web applications. In this guide, we'll create a simple API that handles CRUD (Create, Read, Update, Delete) operations.\n\n### Setting Up Express\nFirst, install Express:\n```sh\nnpm install express\n```\n\n### Creating a Basic Server\n```js\nconst express = require('express');\nconst app = express();\nconst PORT = 3000;\n\napp.get('/', (req, res) => {\n  res.send('Welcome to the API');\n});\n\napp.listen(PORT, () => console.log(`Server running on port ${PORT}`));\n```\n\n### Adding CRUD Routes\n```js\nlet users = [{ id: 1, name: 'Alice' }];\napp.get('/users', (req, res) => res.json(users));\napp.post('/users', (req, res) => {\n  users.push({ id: users.length + 1, name: req.body.name });\n  res.send('User added');\n});\n```\n\n### Conclusion\nExpress simplifies backend development, allowing developers to build scalable and efficient REST APIs.",
+    "dateTime": "February 15, 2025 04:45 PM",
+    "author": "Emma Davis",
+    "avatar": "https://i.pravatar.cc/150?img=7",
+    "hashtags": ["#NodeJS", "#Express", "#RESTAPI", "#Backend", "#Coding"]
+  },
+  {
+    "id": 8,
+    "title": "A Beginner’s Guide to Python for Web Development",
+    "content": "Python is one of the most popular programming languages, known for its simplicity and versatility. It is widely used in **web development**, **data science**, and **automation**.\n\n### Setting Up Python\nTo install Python, visit [python.org](https://www.python.org/) and download the latest version. You can check the installation by running:\n```sh\npython --version\n```\n\n### Writing Your First Python Script\n```python\nprint('Hello, World!')\n```\n\n### Web Development with Flask\nFlask is a lightweight web framework for Python. Install it using:\n```sh\npip install flask\n```\n\n### Creating a Basic Flask App\n```python\nfrom flask import Flask\napp = Flask(__name__)\n\n@app.route('/')\ndef home():\n    return 'Hello, Flask!'\n\nif __name__ == '__main__':\n    app.run(debug=True)\n```\n\n### Conclusion\nPython's readability and strong ecosystem make it a great choice for web development. Learning Flask and Django can help you build powerful applications.",
+    "dateTime": "February 16, 2025 01:00 PM",
+    "author": "Olivia Brown",
+    "avatar": "https://i.pravatar.cc/150?img=8",
+    "hashtags": ["#Python", "#Flask", "#WebDevelopment", "#Backend", "#Coding"]
+  },
+  {
+    "id": 9,
+    "title": "Understanding Object-Oriented Programming (OOP) in JavaScript",
+    "content": "Object-Oriented Programming (OOP) is a programming paradigm based on objects and classes. JavaScript, although originally a prototype-based language, supports OOP concepts like encapsulation, inheritance, and polymorphism.\n\n### 1. What is an Object?\nAn object in JavaScript is a collection of properties and methods:\n```js\nconst car = {\n  brand: 'Tesla',\n  model: 'Model S',\n  start: function() {\n    console.log('Car started');\n  }\n};\ncar.start();\n```\n\n### 2. Creating Classes in JavaScript\nES6 introduced the `class` syntax to simplify OOP in JavaScript:\n```js\nclass Car {\n  constructor(brand, model) {\n    this.brand = brand;\n    this.model = model;\n  }\n  start() {\n    console.log(`${this.brand} ${this.model} started`);\n  }\n}\nconst myCar = new Car('Tesla', 'Model X');\nmyCar.start();\n```\n\n### 3. Inheritance in JavaScript\nInheritance allows one class to extend another:\n```js\nclass ElectricCar extends Car {\n  constructor(brand, model, batteryLife) {\n    super(brand, model);\n    this.batteryLife = batteryLife;\n  }\n}\nconst ev = new ElectricCar('Tesla', 'Model 3', '500 miles');\nconsole.log(ev.batteryLife);\n```\n\n### Conclusion\nOOP helps structure code efficiently, making it easier to scale and maintain. JavaScript’s class-based OOP system is widely used in frameworks like React and Node.js.",
+    "dateTime": "February 17, 2025 02:00 PM",
+    "author": "Sophia Martinez",
+    "avatar": "https://i.pravatar.cc/150?img=9",
+    "hashtags": [
+      "#JavaScript",
+      "#OOP",
+      "#WebDevelopment",
+      "#Coding",
+      "#Programming"
+    ]
+  },
+  {
+    "id": 10,
+    "title": "How to Build a Simple Full-Stack App with React and Node.js",
+    "content": "Creating a full-stack application requires both a frontend and a backend. In this guide, we’ll build a simple full-stack app using React for the frontend and Node.js with Express for the backend.\n\n### 1. Setting Up the Backend (Node.js + Express)\nFirst, install Express:\n```sh\nnpm install express cors body-parser\n```\n\nNow, create a simple backend:\n```js\nconst express = require('express');\nconst cors = require('cors');\nconst app = express();\napp.use(cors());\napp.use(express.json());\n\nlet messages = [];\napp.get('/messages', (req, res) => res.json(messages));\napp.post('/messages', (req, res) => {\n  messages.push(req.body);\n  res.json({ message: 'Message added' });\n});\n\napp.listen(5000, () => console.log('Server running on port 5000'));\n```\n\n### 2. Setting Up the Frontend (React)\nIn your React project, create a component to fetch and display messages:\n```jsx\nimport { useState, useEffect } from 'react';\n\nfunction Messages() {\n  const [messages, setMessages] = useState([]);\n  \n  useEffect(() => {\n    fetch('http://localhost:5000/messages')\n      .then(res => res.json())\n      .then(data => setMessages(data));\n  }, []);\n  \n  return (\n    <div>\n      {messages.map((msg, index) => <p key={index}>{msg.text}</p>)}\n    </div>\n  );\n}\nexport default Messages;\n```\n\n### 3. Connecting the Frontend and Backend\nUse the Fetch API or Axios to send a POST request to store new messages.\n```jsx\nfetch('http://localhost:5000/messages', {\n  method: 'POST',\n  headers: { 'Content-Type': 'application/json' },\n  body: JSON.stringify({ text: 'Hello World' })\n});\n```\n\n### Conclusion\nBy combining React and Node.js, you can create dynamic full-stack applications efficiently.",
+    "dateTime": "February 19, 2025 05:15 PM",
+    "author": "Benjamin Wilson",
+    "avatar": "https://i.pravatar.cc/150?img=10",
+    "hashtags": [
+      "#React",
+      "#NodeJS",
+      "#FullStack",
+      "#WebDevelopment",
+      "#Coding"
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Python vs JavaScript: Which Should You Learn First?",
+    "content": "Both Python and JavaScript are popular languages, but which one should you learn first? The choice depends on your goals and career aspirations.\n\n### 1. Python: Best for Beginners and Data Science\n- Python has **simple, readable syntax**.\n- Ideal for **data science, automation, and backend development**.\n\nExample of Python’s simple syntax:\n```python\nprint('Hello, World!')\n```\n\n### 2. JavaScript: Best for Web Development\n- JavaScript is **the language of the web**.\n- Used in **frontend (React, Vue) and backend (Node.js)**.\n\nExample of JavaScript:\n```js\nconsole.log('Hello, World!');\n```\n\n### Conclusion\n- Learn **Python** if you're interested in AI, data science, or automation.\n- Learn **JavaScript** if you want to build websites and web apps.",
+    "dateTime": "February 20, 2025 10:00 AM",
+    "author": "Charlotte White",
+    "avatar": "https://i.pravatar.cc/150?img=11",
+    "hashtags": [
+      "#Python",
+      "#JavaScript",
+      "#Programming",
+      "#WebDevelopment",
+      "#Coding"
+    ]
+  },
+  {
+    "id": 12,
+    "title": "How to Use Docker for Web Development",
+    "content": "Docker is a tool that allows developers to package applications into containers, ensuring that they run consistently across different environments.\n\n### 1. Why Use Docker?\n- Ensures consistency between development and production.\n- Avoids dependency conflicts.\n- Simplifies deployment.\n\n### 2. Installing Docker\nDownload Docker from [docker.com](https://www.docker.com/) and install it.\n\n### 3. Writing a Simple Dockerfile\n```dockerfile\nFROM node:14\nWORKDIR /app\nCOPY package.json .\nRUN npm install\nCOPY . .\nCMD ['node', 'server.js']\n```\n\n### 4. Running a Container\n```sh\ndocker build -t myapp .\ndocker run -p 3000:3000 myapp\n```\n\n### Conclusion\nDocker is an essential tool for modern web development, making applications more portable and easier to deploy.",
+    "dateTime": "February 22, 2025 03:30 PM",
+    "author": "James Anderson",
+    "avatar": "https://i.pravatar.cc/150?img=12",
+    "hashtags": [
+      "#Docker",
+      "#DevOps",
+      "#WebDevelopment",
+      "#Containers",
+      "#Coding"
+    ]
+  },
+  {
+    "id": 13,
+    "title": "A Complete Guide to Regular Expressions (Regex) in JavaScript",
+    "content": "Regular Expressions (Regex) are powerful tools for pattern matching in strings. JavaScript provides built-in support for regex, making it easy to validate, search, and manipulate text.\n\n### 1. Basic Regex Syntax\nA simple regex pattern looks like this:\n```js\nconst regex = /hello/i; // 'i' makes it case insensitive\nconsole.log(regex.test('Hello World')); // true\n```\n\n### 2. Common Regex Methods\n#### `test()` - Checks if a string matches a pattern\n```js\nconsole.log(/\\d+/.test('123')); // true (checks for digits)\n```\n#### `match()` - Extracts matched text\n```js\nconst result = 'Hello 2025'.match(/\\d+/);\nconsole.log(result[0]); // '2025'\n```\n\n### 3. Advanced Patterns\n- **`^` and `$`** - Match start and end of a string\n- **`\b`** - Word boundary\n- **`.*`** - Matches any character\n\n### Conclusion\nRegex can be challenging but is extremely useful in form validation, text parsing, and data extraction.",
+    "dateTime": "February 23, 2025 08:45 AM",
+    "author": "Olivia Brown",
+    "avatar": "https://i.pravatar.cc/150?img=13",
+    "hashtags": [
+      "#JavaScript",
+      "#Regex",
+      "#WebDevelopment",
+      "#Coding",
+      "#Patterns"
+    ]
+  },
+  {
+    "id": 14,
+    "title": "The Basics of Web Security: Protecting Your Applications",
+    "content": "Security is a critical aspect of web development. Developers must be aware of common vulnerabilities and how to protect against them.\n\n### 1. Cross-Site Scripting (XSS)\nXSS allows attackers to inject malicious scripts into web pages.\n#### 🔴 Bad Example (Vulnerable Code)\n```js\ndocument.body.innerHTML = `<h1>${userInput}</h1>`;\n```\n#### ✅ Secure Approach (Sanitization)\n```js\nconst safeInput = userInput.replace(/[<>]/g, '');\ndocument.body.innerHTML = `<h1>${safeInput}</h1>`;\n```\n\n### 2. SQL Injection\nAttackers can manipulate SQL queries to gain unauthorized access.\n#### 🔴 Bad Example\n```sql\nSELECT * FROM users WHERE username = 'admin' AND password = 'password123';\n```\n#### ✅ Secure Approach (Using Prepared Statements)\n```js\nconst query = 'SELECT * FROM users WHERE username = ? AND password = ?';\n```\n\n### Conclusion\nUnderstanding web security principles is essential for building secure applications.",
+    "dateTime": "February 25, 2025 11:10 AM",
+    "author": "Ava Moore",
+    "avatar": "https://i.pravatar.cc/150?img=14",
+    "hashtags": [
+      "#WebSecurity",
+      "#Cybersecurity",
+      "#WebDevelopment",
+      "#Security",
+      "#Coding"
+    ]
+  },
+  {
+    "id": 15,
+    "title": "How to Use Git and GitHub for Version Control",
+    "content": "Git is the most widely used version control system, and GitHub makes collaboration easy. Every developer should master Git to track changes and work effectively in teams.\n\n### 1. Installing Git\nDownload Git from [git-scm.com](https://git-scm.com/) and install it.\n\n### 2. Setting Up Git\n```sh\ngit config --global user.name 'Your Name'\ngit config --global user.email 'you@example.com'\n```\n\n### 3. Basic Git Commands\n#### Initialize a repository\n```sh\ngit init\n```\n#### Add files and commit\n```sh\ngit add .\ngit commit -m 'Initial commit'\n```\n#### Push to GitHub\n```sh\ngit remote add origin https://github.com/user/repo.git\ngit push -u origin main\n```\n\n### Conclusion\nGit and GitHub are essential tools for modern development, enabling collaboration and efficient version control.",
+    "dateTime": "February 27, 2025 02:30 PM",
+    "author": "James Anderson",
+    "avatar": "https://i.pravatar.cc/150?img=15",
+    "hashtags": [
+      "#Git",
+      "#GitHub",
+      "#VersionControl",
+      "#Coding",
+      "#Development"
+    ]
+  },
+  {
+    "id": 16,
+    "title": "Introduction to Data Structures and Algorithms (DSA)",
+    "content": "Data Structures and Algorithms (DSA) are fundamental concepts for efficient problem-solving in programming. Learning DSA is essential for coding interviews and optimizing applications.\n\n### 1. What Are Data Structures?\nA **data structure** is a way of organizing data efficiently.\n- **Array** - Stores elements in a fixed order.\n- **Linked List** - Stores elements as nodes with pointers.\n- **Stack** - Follows LIFO (Last In, First Out).\n- **Queue** - Follows FIFO (First In, First Out).\n\nExample of a Stack in JavaScript:\n```js\nclass Stack {\n  constructor() {\n    this.items = [];\n  }\n  push(element) {\n    this.items.push(element);\n  }\n  pop() {\n    return this.items.pop();\n  }\n}\nconst stack = new Stack();\nstack.push(10);\nstack.push(20);\nconsole.log(stack.pop()); // 20\n```\n\n### 2. Introduction to Algorithms\nAn **algorithm** is a step-by-step approach to solving a problem.\n- **Sorting Algorithms** (Bubble Sort, Quick Sort)\n- **Searching Algorithms** (Binary Search)\n\nExample of Binary Search:\n```js\nfunction binarySearch(arr, target) {\n  let left = 0, right = arr.length - 1;\n  while (left <= right) {\n    let mid = Math.floor((left + right) / 2);\n    if (arr[mid] === target) return mid;\n    else if (arr[mid] < target) left = mid + 1;\n    else right = mid - 1;\n  }\n  return -1;\n}\nconsole.log(binarySearch([1, 2, 3, 4, 5], 4)); // Output: 3\n```\n\n### Conclusion\nMastering DSA improves coding efficiency and problem-solving skills. It is essential for coding interviews and building scalable applications.",
+    "dateTime": "February 29, 2025 05:50 PM",
+    "author": "William Taylor",
+    "avatar": "https://i.pravatar.cc/150?img=16",
+    "hashtags": [
+      "#DSA",
+      "#Algorithms",
+      "#DataStructures",
+      "#Coding",
+      "#Development"
+    ]
+  },
+  {
+    "id": 17,
+    "title": "REST vs GraphQL: Choosing the Right API for Your Project",
+    "content": "APIs are the backbone of modern web applications, enabling communication between frontend and backend services. REST and GraphQL are two widely used API architectures, each with advantages and drawbacks.\n\n### 1. What is REST?\nREST (Representational State Transfer) is based on standard HTTP methods such as GET, POST, PUT, and DELETE. It follows a **resource-based URL structure**.\n\nExample REST request:\n```sh\nGET /users/1\n```\nA REST API returns **fixed** response structures, which can lead to **over-fetching** (getting more data than needed) or **under-fetching** (requiring multiple requests).\n\n### 2. What is GraphQL?\nGraphQL allows clients to **request only the data they need**, reducing over-fetching. Unlike REST, which has multiple endpoints, GraphQL uses a **single endpoint**.\n\nExample GraphQL query:\n```graphql\nquery {\n  user(id: 1) {\n    name\n    email\n  }\n}\n```\n\n### 3. Key Differences\n| Feature      | REST                | GraphQL           |\n|-------------|--------------------|------------------|\n| Data Fetching | Multiple Requests  | Single Query    |\n| Flexibility  | Fixed Endpoints    | Custom Queries  |\n| Performance  | Can Over-Fetch Data | Optimized Requests |\n\n### 4. When to Use Which?\n- Use **REST** for simpler APIs where caching and statelessness are important.\n- Use **GraphQL** for complex applications where clients need **fine-grained control** over data retrieval.\n\n### Conclusion\nBoth REST and GraphQL have their place in web development. Choosing the right one depends on **scalability, data complexity, and performance needs**.",
+    "dateTime": "March 2, 2025 08:00 AM",
+    "author": "Emma Davis",
+    "avatar": "https://i.pravatar.cc/150?img=17",
+    "hashtags": ["#REST", "#GraphQL", "#API", "#WebDevelopment", "#Backend"]
+  },
+  {
+    "id": 18,
+    "title": "How to Implement JWT Authentication in a Node.js App",
+    "content": "User authentication is a critical feature in most applications. JSON Web Tokens (JWT) offer a **secure, stateless authentication mechanism** for modern web apps.\n\n### 1. Install Dependencies\nInstall the necessary packages:\n```sh\nnpm install express jsonwebtoken bcryptjs cors body-parser\n```\n\n### 2. Hashing Passwords with Bcrypt\n```js\nconst bcrypt = require('bcryptjs');\nconst users = [];\nfunction createUser(username, password) {\n  const hashedPassword = bcrypt.hashSync(password, 10);\n  users.push({ username, password: hashedPassword });\n}\n```\n\n### 3. Generating JWT Tokens\n```js\nconst jwt = require('jsonwebtoken');\nfunction generateToken(user) {\n  return jwt.sign(user, 'secretkey', { expiresIn: '1h' });\n}\n```\n\n### 4. Protecting Routes with Middleware\n```js\nfunction verifyToken(req, res, next) {\n  const token = req.headers['authorization'];\n  if (!token) return res.status(403).send('Access Denied');\n  jwt.verify(token, 'secretkey', (err, decoded) => {\n    if (err) return res.status(401).send('Invalid Token');\n    req.user = decoded;\n    next();\n  });\n}\n```\n\n### Conclusion\nJWT authentication ensures **secure, scalable** user authentication for web applications. Always follow best practices like **secure storage and token expiration**.",
+    "dateTime": "March 3, 2025 11:30 AM",
+    "author": "Liam Thompson",
+    "avatar": "https://i.pravatar.cc/150?img=18",
+    "hashtags": [
+      "#Authentication",
+      "#JWT",
+      "#NodeJS",
+      "#WebSecurity",
+      "#Coding"
+    ]
+  },
+  {
+    "id": 19,
+    "title": "Mastering CSS Flexbox and Grid for Responsive Layouts",
+    "content": "CSS Flexbox and Grid are essential layout techniques for responsive web design. **Understanding when to use each** can greatly improve UI development.\n\n### 1. CSS Flexbox (Best for One-Dimensional Layouts)\nFlexbox is best for **arranging elements in rows or columns**.\n```css\n.container {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n```\n\n### 2. CSS Grid (Best for Two-Dimensional Layouts)\nCSS Grid is ideal for **structuring entire page layouts**.\n```css\n.container {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 10px;\n}\n```\n\n### 3. When to Use Flexbox vs Grid\n- **Use Flexbox** for **navigation bars, buttons, and simple component layouts**.\n- **Use Grid** for **full-page layouts and complex multi-column designs**.\n\n### Conclusion\nMastering Flexbox and Grid ensures **clean, scalable**, and **responsive** web design.",
+    "dateTime": "March 5, 2025 02:15 PM",
+    "author": "Charlotte White",
+    "avatar": "https://i.pravatar.cc/150?img=19",
+    "hashtags": ["#CSS", "#Flexbox", "#Grid", "#WebDesign", "#Frontend"]
+  },
+  {
+    "id": 20,
+    "title": "Getting Started with Machine Learning in Python",
+    "content": "Machine Learning (ML) is revolutionizing industries by enabling computers to **learn from data**. Python, with libraries like NumPy and Scikit-Learn, is the most widely used language for ML.\n\n### 1. Install Required Libraries\n```sh\npip install numpy pandas scikit-learn\n```\n\n### 2. Loading a Dataset\n```python\nimport pandas as pd\nfrom sklearn.model_selection import train_test_split\n\ndata = pd.read_csv('data.csv')\nX_train, X_test, y_train, y_test = train_test_split(data[['feature']], data['label'], test_size=0.2)\n```\n\n### 3. Training a Simple Model\n```python\nfrom sklearn.linear_model import LinearRegression\nmodel = LinearRegression()\nmodel.fit(X_train, y_train)\n```\n\n### 4. Making Predictions\n```python\ny_pred = model.predict(X_test)\nprint(y_pred)\n```\n\n### Conclusion\nMachine Learning is an exciting field with endless possibilities. Python's ecosystem makes it **accessible** for developers looking to dive into AI.",
+    "dateTime": "March 6, 2025 05:30 PM",
+    "author": "Sophia Martinez",
+    "avatar": "https://i.pravatar.cc/150?img=20",
+    "hashtags": [
+      "#MachineLearning",
+      "#Python",
+      "#AI",
+      "#DataScience",
+      "#Coding"
+    ]
+  }
+]

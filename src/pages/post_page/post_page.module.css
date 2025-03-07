@@ -35,6 +35,11 @@
   padding: 15px;
   margin-top: 0;
 }
+/* .menuCon,
+.contentCon {
+  max-width: 800px;
+  width: 80%;
+} */
 .detailsCon {
   display: flex;
   gap: 10px;
@@ -62,7 +67,7 @@ img {
 .title {
   font-size: 1.5em;
   color: hsl(0, 0%, 10%);
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .content {
   font-size: 1em;
@@ -75,6 +80,7 @@ img {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  margin-bottom: 20px;
 }
 .hashtag {
   font-size: 0.6em;
@@ -103,9 +109,10 @@ img {
 .nextButton {
   margin-left: auto;
 }
-.codeBlock {
-  max-width: 600px;
+.codeBlockCon {
+  width: 100%;
 }
+
 .menuCon {
   display: flex;
   justify-content: space-between;
@@ -159,11 +166,4 @@ img {
   font-size: 0.8em;
   text-decoration: none;
   color: hsl(0, 0%, 10%);
-}
-
-@media (max-width: 680px) {
-  .codeBlock {
-    width: 350px;
-    overflow-x: auto;
-  }
 }

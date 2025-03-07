@@ -6,7 +6,7 @@ import ArrowForwardTwoToneIcon from "@mui/icons-material/ArrowForwardTwoTone";
 import ArrowLeftTwoToneIcon from "@mui/icons-material/ArrowLeftTwoTone";
 import MoreVertTwoToneIcon from "@mui/icons-material/MoreVertTwoTone";
 import Style from "./post_page.module.css";
-
+import Action from "../../components/action/Action";
 const PostPage = ({
   posts,
   defaultAvatar,
@@ -24,8 +24,8 @@ const PostPage = ({
   if (postIndex === -1) return <h2>Post not found</h2>;
 
   const post = posts[postIndex];
-  const prevPost = postIndex > 0 && posts[postIndex - 1];
-  const nextPost = postIndex < posts.length - 1 && posts[postIndex + 1];
+  const prevPost = postIndex > 0 && posts[postIndex + 1];
+  const nextPost = postIndex < posts.length + 1 && posts[postIndex - 1];
 
   const renderContent = (text) => {
     const lines = text.split("\n");
@@ -38,14 +38,16 @@ const PostPage = ({
       if (line.startsWith("```")) {
         if (isCodeBlock) {
           elements.push(
-            <SyntaxHighlighter
-              key={index}
-              language={language}
-              style={dracula}
-              className={Style.codeBlock}
-            >
-              {codeBlock.join("\n")}
-            </SyntaxHighlighter>
+            <div className={Style.codeBlockCon}>
+              <SyntaxHighlighter
+                key={index}
+                language={language}
+                style={dracula}
+                className={Style.codeBlock}
+              >
+                {codeBlock.join("\n")}
+              </SyntaxHighlighter>
+            </div>
           );
           codeBlock = [];
         } else {
@@ -103,7 +105,7 @@ const PostPage = ({
             />
             <div className={Style.authorDetails}>
               <h3 className={Style.author}>{post.author}</h3>
-              <p className={Style.postDate}>{post.dateTime}</p>
+              <p className={Style.postDate}>{`Posted on ${post.dateTime}`}</p>
             </div>
           </div>
 
@@ -127,18 +129,20 @@ const PostPage = ({
             )}
           </div>
         </div>
-        <h4 className={Style.title}>{post.title}</h4>
-        <div className={Style.content}>{renderContent(post.content)}</div>
-        <p className={Style.hashtags}>
-          {post.hashtags.map((tag, index) => {
-            return (
-              <span key={index + 1} className={Style.hashtag}>
-                {tag}
-              </span>
-            );
-          })}
-        </p>
-        <div className={Style.deleteContainer}></div>
+        <div className={Style.contentCon}>
+          <h4 className={Style.title}>{post.title}</h4>
+          <p className={Style.hashtags}>
+            {post.hashtags.map((tag, index) => {
+              return (
+                <span key={index + 1} className={Style.hashtag}>
+                  {`${tag}  `}
+                </span>
+              );
+            })}
+          </p>
+          <div className={Style.content}>{renderContent(post.content)}</div>
+          <Action />
+        </div>
       </div>
       <div className={Style.pagination}>
         {prevPost && (

@@ -18,7 +18,7 @@ const Header = ({
   setSearchValue,
 }) => {
   const searchRef = useRef(null);
-  const menuRef = useRef(null);
+  const name = "Knowledge Vault";
 
   useEffect(() => {
     setSearchVisible(false);
@@ -32,22 +32,6 @@ const Header = ({
     }
   }, [searchVisible, setSearchValue]);
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (
-        (searchRef.current && !searchRef.current.contains(event.target)) ||
-        (menuRef.current && !menuRef.current.contains(event.target))
-      ) {
-        setSearchVisible(false);
-        setMenuToggle(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
   const toggleMenu = () => setMenuToggle((p) => !p);
   const toggleSearch = () => setSearchVisible((prev) => !prev);
   const getSearchValue = (e) => setSearchValue(e.target.value);
@@ -58,14 +42,13 @@ const Header = ({
       <header className={Style.header}>
         <h1 className={Style.title}>
           <Link to="/" className={Style.titleLink}>
-            WealthWise Hub
+            {name}
           </Link>
         </h1>
         <div className={Style.searchContainer}>
           <Search
             onChange={getSearchValue}
             value={searchValue}
-            searchRef={searchRef}
             searchIcon={searchIcon}
           />
         </div>

@@ -49,8 +49,8 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/posts");
-        const data = response.data;
+        const response = await axios.get("/posts.json");
+        const data = response.data.reverse();
         console.log(data);
         setPosts(data);
         setIsLoading(false);
@@ -72,7 +72,7 @@ const App = () => {
     const filteredResult = posts.filter((p) =>
       p.title.toLowerCase().includes(searchValue?.toLowerCase())
     );
-    setSearchResults([...filteredResult].reverse());
+    setSearchResults([...filteredResult]);
   }, [posts, searchValue]);
 
   const ScrollToTop = () => {
