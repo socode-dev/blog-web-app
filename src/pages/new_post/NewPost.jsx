@@ -1,5 +1,7 @@
 import Style from "./new_post.module.css";
 import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
+import ArrowLeftTwoToneIcon from "@mui/icons-material/ArrowLeftTwoTone";
 
 const NewPost = ({
   postTitle,
@@ -22,6 +24,10 @@ const NewPost = ({
 
   return (
     <form onSubmit={createNewPost} className={Style.form}>
+      <Link to="/" className={Style.homeLink}>
+        <ArrowLeftTwoToneIcon className={Style.backArrow} />
+        Back
+      </Link>
       <h2 className={Style.formHeading}>Create a New Post</h2>
 
       <div className={Style.titleCon}>
@@ -37,7 +43,7 @@ const NewPost = ({
         />
       </div>
       <div className={Style.hashtagCon}>
-        <label htmlFor="hashtags">Hashtags</label>
+        <label htmlFor="hashtags">Hashtags:</label>
         <input
           type="text"
           name="hashtags"

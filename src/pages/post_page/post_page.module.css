@@ -56,16 +56,16 @@ img {
   gap: 10px;
 }
 .author {
-  font-size: 0.8em;
+  font-size: 1em;
   font-weight: bold;
   color: hsl(0, 0%, 30%);
 }
 .postDate {
-  font-size: 0.6em;
+  font-size: 0.8em;
   color: hsl(0, 0%, 40%);
 }
 .title {
-  font-size: 1.5em;
+  font-size: 1.8em;
   color: hsl(0, 0%, 10%);
   margin-bottom: 10px;
 }
@@ -83,7 +83,7 @@ img {
   margin-bottom: 20px;
 }
 .hashtag {
-  font-size: 0.6em;
+  font-size: 0.7em;
   color: hsl(0, 0%, 30%);
 }
 
@@ -97,6 +97,7 @@ img {
   align-items: center;
   border: none;
   background-color: inherit;
+  color: hsl(0, 0%, 10%);
   cursor: pointer;
   transition: 0.2s;
 }

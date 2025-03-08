@@ -69,6 +69,7 @@ const Header = ({
             onChange={getSearchValue}
             value={searchValue}
             searchRef={searchRef}
+            className={Style.mobileSearch}
           />
         </div>
       )}

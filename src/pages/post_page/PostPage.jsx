@@ -1,4 +1,6 @@
 import { useNavigate, useParams, Link } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import ArrowBackTwoToneIcon from "@mui/icons-material/ArrowBackTwoTone";
@@ -24,44 +26,35 @@ const PostPage = ({
   if (postIndex === -1) return <h2>Post not found</h2>;
 
   const post = posts[postIndex];
-  const prevPost = postIndex > 0 && posts[postIndex + 1];
-  const nextPost = postIndex < posts.length + 1 && posts[postIndex - 1];
+  const prevPost = postIndex > 0 && posts[postIndex - 1];
+  const nextPost = postIndex < posts.length - 1 && posts[postIndex + 1];
 
   const renderContent = (text) => {
-    const lines = text.split("\n");
-    const elements = [];
-    let codeBlock = [];
-    let isCodeBlock = false;
-    let language = "javascript";
-
-    lines.forEach((line, index) => {
-      if (line.startsWith("```")) {
-        if (isCodeBlock) {
-          elements.push(
-            <div className={Style.codeBlockCon}>
+    return (
+      <ReactMarkdown
+        children={text}
+        remarkPlugins={[remarkGfm]}
+        components={{
+          code({ node, inline, className, children, ...props }) {
+            const match = /language-(\w+)/.exec(className || "");
+            return !inline && match ? (
               <SyntaxHighlighter
-                key={index}
-                language={language}
                 style={dracula}
-                className={Style.codeBlock}
+                language={match[1]}
+                PreTag="div"
+                {...props}
               >
-                {codeBlock.join("\n")}
+                {String(children).replace(/\n$/, "")}
               </SyntaxHighlighter>
-            </div>
-          );
-          codeBlock = [];
-        } else {
-          language = line.includes("js") ? "javascript" : "typescript";
-        }
-        isCodeBlock = !isCodeBlock;
-      } else if (isCodeBlock) {
-        codeBlock.push(line);
-      } else {
-        elements.push(<p key={index}>{line}</p>);
-      }
-      return <p key={index}>{line}</p>;
-    });
-    return elements;
+            ) : (
+              <code className={className} {...props}>
+                {children}
+              </code>
+            );
+          },
+        }}
+      />
+    );
   };
 
   const handleDelete = (id) => {

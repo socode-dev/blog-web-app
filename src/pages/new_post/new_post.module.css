@@ -10,6 +10,23 @@
   height: auto;
   padding: 80px 20px;
 }
+.homeLink {
+  margin-bottom: 20px;
+}
+.homeLink,
+.backArrow {
+  color: hsl(0, 0%, 20%);
+  font-size: 0.9em;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s ease-out;
+}
+.homeLink:hover {
+  color: hsl(0, 0%, 30%);
+}
 .formHeading {
   font-size: 2em;
   margin-bottom: 20px;

@@ -54,7 +54,7 @@
     flex-direction: column;
     gap: 40px;
     position: absolute;
-    top: 60px;
+    top: 50px;
     right: 0;
     background-color: hsl(0, 0%, 100%);
     width: 100%;
@@ -64,8 +64,7 @@
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
-    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out,
-      visibilty 0.4s ease-in-out;
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
   }
   .menuIcon,
   .search {
@@ -81,11 +80,9 @@
     top: 60px;
     width: 100%;
     left: 0;
-    background-color: hsl(0, 0%, 90%);
     padding: 10px;
-    box-shadow: 0 2px 5px hsl(0, 0%, 80%);
+    background-color: hsl(0, 0%, 100%);
+    box-shadow: 0 2px 5px hsl(0, 0%, 90%);
     z-index: 999;
-    display: grid;
-    place-items: center;
   }
 }
