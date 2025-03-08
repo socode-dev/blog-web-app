@@ -41,19 +41,20 @@ A modern, user-friendly blogging platform built with React that allows users to 
 ## 📂 Project Structure (Vite)
 
 📦 knowledge-vault
+
 │── 📁 public (Static assets)
 
-| │── 📜 posts.json
+│ │── 📜 posts.json
 
-| │── 📁 assets
+│ │── 📁 assets
 
-| | │── 📁 screenshots
+│ │ │── 📁 screenshots
 
 │── 📁 src
 
 │ ├── 📁 app
 
-│ | ├── 📜 App.jsx (Main application logic)
+│ │ ├── 📜 App.jsx (Main application logic)
 
 │ ├── 📁 components
 
