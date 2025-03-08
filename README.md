@@ -38,6 +38,63 @@ A modern, user-friendly blogging platform built with React that allows users to 
 
 ![Create New Post](./public/assets/screenshots/new_post.png)
 
+## 📂 Project Structure (Vite)
+
+📦 knowledge-vault
+│── 📁 public (Static assets)
+
+| │── 📜 posts.json
+
+| │── 📁 assets
+
+| | │── 📁 screenshots
+
+│── 📁 src
+
+│ ├── 📁 app
+
+│ | ├── 📜 App.jsx (Main application logic)
+
+│ ├── 📁 components
+
+│ │ ├── 📁 action (Like, Comment, Bookmark, Star)
+
+│ │ ├── 📁 button (Reusable buttons)
+
+│ │ ├── 📁 footer (Footer)
+
+│ │ ├── 📁 header
+
+│ │ ├── 📁 nav
+
+│ │ ├── 📁 search
+
+│ ├── 📁 pages
+
+│ │ ├── 📁 home (Displays all posts)
+
+│ │ ├── 📁 missing (404 Page)
+
+│ │ ├── 📁 new_post (Create and edit posts)
+
+│ │ ├── 📁 post_page (View full post)
+
+│ ├── 📜 main.jsx (Entry point for Vite)
+
+│── 📜 .gitignore
+
+│── 📜 eslint.config.js
+
+│── 📜 index.html
+
+│── 📜 package-lock.json
+
+│── 📜 package.json
+
+│── 📜 README.md
+
+│── 📜 vite.config.js (Vite configuration file)
+
 ## 🛠 Tech Stack
 
 Technology
@@ -62,7 +119,7 @@ Material-UI
 
 1️⃣ Clone the Repository
 
-git clone https://github.com/Sammytee98/knowledge-vault.git
+git clone https://github.com/Sammytee98/blog-web.app.git
 cd knowledge-vault
 
 2️⃣ Install Dependencies
@@ -114,4 +171,4 @@ Big Sam – Full Stack Developer
 
 ## 📜 License
 
-This project is open-source and licensed under the MIT License.
+This project is open-source and licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
