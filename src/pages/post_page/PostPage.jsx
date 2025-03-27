@@ -83,7 +83,7 @@ const PostPage = ({
   const handlePostMenuToggle = () => setPostMenuToggle((prev) => !prev);
 
   return (
-    <article className={Style.article}>
+    <article className={Style.article} onClick={() => setPostMenuToggle(false)}>
       <Link to="/" className={Style.homeLink}>
         <ArrowLeftTwoToneIcon className={Style.backArrow} />
         Back

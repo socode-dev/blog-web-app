@@ -8,6 +8,7 @@
   width: 100%;
   min-height: 100svh;
   flex: 1;
+  padding-block: 20px;
   background-color: hsl(0, 0%, 90%);
 
   display: flex;
