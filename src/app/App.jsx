@@ -8,7 +8,7 @@ import NewPost from "../pages/new_post/NewPost";
 import Missing from "../pages/missing/Missing";
 import Footer from "../components/footer/Footer";
 import styles from "./app.module.css";
-import { format } from "date-fns";
+import { DataProvider } from "../context/PostContext";
 
 const App = () => {
   const navigate = useNavigate();
@@ -45,24 +45,6 @@ const App = () => {
     "#CompoundInterest",
     "#EmergencyFund",
   ];
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get("/posts.json");
-        const data = response.data.reverse();
-        console.log(data);
-        setPosts(data);
-        setIsLoading(false);
-      } catch (err) {
-        console.log("Error Fetching Posts:", err);
-      } finally {
-        console.log("Fetch request completed");
-      }
-    };
-
-    fetchData();
-  }, []);
 
   useEffect(() => {
     if (!searchValue) {
@@ -123,59 +105,17 @@ const App = () => {
   return (
     <div className={styles.app}>
       <ScrollToTop />
-      <Header
-        className={styles.header}
-        menuToggle={menuToggle}
-        setMenuToggle={setMenuToggle}
-        searchVisible={searchVisible}
-        setSearchVisible={setSearchVisible}
-        searchValue={searchValue}
-        setSearchValue={setSearchValue}
-      />
-      <main className={styles.main}>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <Home
-                posts={searchResults}
-                defaultAvatar={defaultAvatar}
-                isLoading={isLoading}
-              />
-            }
-          />
-          <Route
-            path="post/:postId"
-            element={
-              <PostPage
-                posts={posts}
-                setPosts={setPosts}
-                defaultAvatar={defaultAvatar}
-                setPostTitle={setPostTitle}
-                setPostBody={setPostBody}
-                setUserHashTags={setUserHashTags}
-                postMenuToggle={postMenuToggle}
-                setPostMenuToggle={setPostMenuToggle}
-              />
-            }
-          />
-          <Route
-            path="post"
-            element={
-              <NewPost
-                postTitle={postTitle}
-                postBody={postBody}
-                setPostTitle={setPostTitle}
-                setPostBody={setPostBody}
-                createNewPost={createNewPost}
-                userHashTags={userHashTags}
-                setUserHashTags={setUserHashTags}
-              />
-            }
-          />
-          <Route path="*" element={<Missing />} />
-        </Routes>
-      </main>
+      <DataProvider>
+        <Header className={styles.header} />
+        <main className={styles.main}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="post/:postId" element={<PostPage />} />
+            <Route path="post" element={<NewPost />} />
+            <Route path="*" element={<Missing />} />
+          </Routes>
+        </main>
+      </DataProvider>
       <Footer className={styles.footer} />
     </div>
   );

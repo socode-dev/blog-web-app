@@ -1,17 +1,19 @@
 import Style from "./new_post.module.css";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useContext } from "react";
+import DataContext from "../../context/PostContext";
 import { Link } from "react-router-dom";
 import ArrowLeftTwoToneIcon from "@mui/icons-material/ArrowLeftTwoTone";
 
-const NewPost = ({
-  postTitle,
-  setPostTitle,
-  postBody,
-  setPostBody,
-  createNewPost,
-  userHashTags,
-  setUserHashTags,
-}) => {
+const NewPost = () => {
+  const {
+    postTitle,
+    setPostTitle,
+    postBody,
+    setPostBody,
+    createNewPost,
+    userHashTags,
+    setUserHashTags,
+  } = useContext(DataContext);
   const titleRef = useRef();
 
   useEffect(() => {
@@ -23,7 +25,7 @@ const NewPost = ({
   const handleHashtagChange = (e) => setUserHashTags(e.target.value);
 
   return (
-    <form onSubmit={createNewPost} className={Style.form}>
+    <form className={Style.form}>
       <Link to="/" className={Style.homeLink}>
         <ArrowLeftTwoToneIcon className={Style.backArrow} />
         Back
@@ -65,7 +67,7 @@ const NewPost = ({
         />
       </div>
 
-      <button type="submit" className={Style.postButton}>
+      <button onClick={createNewPost} className={Style.postButton}>
         Create Post
       </button>
     </form>

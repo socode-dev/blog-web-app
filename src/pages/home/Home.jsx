@@ -1,13 +1,17 @@
 import { Link } from "react-router-dom";
 import Style from "./home.module.css";
+import { useContext } from "react";
+import DataContext from "../../context/PostContext";
 
-const Home = ({ posts, defaultAvatar, isLoading }) => {
+const Home = () => {
+  const { searchResults, defaultAvatar, isLoading } = useContext(DataContext);
+
   return (
     <div className={Style.mainContainer}>
       {isLoading ? (
         <p>Loading...</p>
-      ) : posts.length > 0 ? (
-        posts.map((post) => {
+      ) : searchResults.length ? (
+        searchResults.map((post) => {
           return (
             <div key={post.id} className={Style.postContainer}>
               <div className={Style.detailsContainer}>

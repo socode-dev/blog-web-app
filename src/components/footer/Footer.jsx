@@ -9,7 +9,7 @@ const Footer = () => {
         &copy; {year} Finance Blog | Built by{" "}
         <strong>
           <a
-            href="https://github.com/Sammytee98?tab=repositories"
+            href="https://github.com/socode-dev?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
             className={Style.footerLink}

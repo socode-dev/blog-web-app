@@ -16,6 +16,7 @@
 }
 .title {
   font-size: 1.5em;
+  margin-right: 40px;
   font-family: "Playfair Display", serif;
   cursor: pointer;
 }
@@ -32,6 +33,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-left: 40px;
 }
 .menuIcon,
 .search {
@@ -77,7 +79,7 @@
   }
   .mobileSearchContainer {
     position: absolute;
-    top: 45px;
+    top: 55px;
     width: 100%;
     left: 0;
     padding: 10px;

@@ -1,4 +1,5 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useContext } from "react";
+import DataContext from "../../context/PostContext";
 import Nav from "../nav/Nav";
 import Search from "../search/Search";
 import SearchStyle from "../search/search.module.css";
@@ -9,14 +10,15 @@ import ButtonStyle from "../button/button.module.css";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 
-const Header = ({
-  menuToggle,
-  setMenuToggle,
-  searchVisible,
-  setSearchVisible,
-  searchValue,
-  setSearchValue,
-}) => {
+const Header = () => {
+  const {
+    menuToggle,
+    setMenuToggle,
+    searchVisible,
+    setSearchVisible,
+    searchValue,
+    setSearchValue,
+  } = useContext(DataContext);
   const searchRef = useRef(null);
   const name = "Knowledge Vault";
 

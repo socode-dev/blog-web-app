@@ -9,16 +9,20 @@ import ArrowLeftTwoToneIcon from "@mui/icons-material/ArrowLeftTwoTone";
 import MoreVertTwoToneIcon from "@mui/icons-material/MoreVertTwoTone";
 import Style from "./post_page.module.css";
 import Action from "../../components/action/Action";
-const PostPage = ({
-  posts,
-  defaultAvatar,
-  setPosts,
-  setPostTitle,
-  setPostBody,
-  setUserHashTags,
-  postMenuToggle,
-  setPostMenuToggle,
-}) => {
+import { useContext } from "react";
+import DataContext from "../../context/PostContext";
+
+const PostPage = () => {
+  const {
+    posts,
+    defaultAvatar,
+    setPosts,
+    setPostTitle,
+    setPostBody,
+    setUserHashTags,
+    postMenuToggle,
+    setPostMenuToggle,
+  } = useContext(DataContext);
   const navigate = useNavigate();
   const { postId } = useParams();
   const postIndex = posts.findIndex((post) => post.id === Number(postId));
@@ -65,6 +69,7 @@ const PostPage = ({
 
     const updatedPost = posts.filter((p) => p.id !== id);
     setPosts(updatedPost);
+    setPostMenuToggle(false);
     navigate("/");
   };
 
@@ -76,14 +81,16 @@ const PostPage = ({
 
     setPostTitle(post.title);
     setPostBody(post.content);
-    setUserHashTags(post.hashtags);
+    setUserHashTags(post.hashtags.join(""));
+    setPostMenuToggle(false);
     navigate("/post");
   };
 
   const handlePostMenuToggle = () => setPostMenuToggle((prev) => !prev);
+  console.log(postMenuToggle);
 
   return (
-    <article className={Style.article} onClick={() => setPostMenuToggle(false)}>
+    <article className={Style.article}>
       <Link to="/" className={Style.homeLink}>
         <ArrowLeftTwoToneIcon className={Style.backArrow} />
         Back
